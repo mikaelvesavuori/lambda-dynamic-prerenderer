@@ -17,6 +17,10 @@ All of this magic can be fairly tedious to work with from scratch, especially if
 
 The below helps with the overall steps for manually setting everything up. You should be able to set up with Terraform or similar as well. Lambda@Edge functions through Serverless has proven hard, even with a fairly well-documented package out, so unfortunately you will have to deploy them manually through the web frontend.
 
+## Test it
+
+Curl or POST to `https://uxj5ky4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender?url=http://d13x2tqlfdnb32.cloudfront.net/thatview`.
+
 ## Instructions
 
 ### Prerequisites
@@ -37,8 +41,8 @@ A basic, routed React application is available in the `s3` folder if you need so
 1. Have an AWS account and be logged in through the terminal/environment
 2. Install the dependencies in the repo with `yarn` or `npm install`
 3. Run `sls deploy` to deploy the package with Serverless
-4. Upon successful push, you will receive an endpoint URL, such as `https://ufj5gb4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender`
-5. Test running a POST request to the prerenderer, like so: `https://ufj5gb4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender?url=https://www.google.com/?client=safarihttp://prerender-demo.s3-website.eu-north-1.amazonaws.com/thatview`
+4. Upon successful push, you will receive an endpoint URL, such as `https://uxj5ky4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender?url=http://d13x2tqlfdnb32.cloudfront.net/thatview`
+5. Test running a POST request to the prerenderer, like so: `https://uxj5ky4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender?url=http://d13x2tqlfdnb32.cloudfront.net/thatview`
 6. Copy the endpoint URL, and paste it into the `BASE_URL_RENDERER` constant in `functions/edgePrerenderResponse.js` (should be line 26)
 
 ### Host it in S3
