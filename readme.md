@@ -39,6 +39,7 @@ A basic, routed React application is available in the `s3` folder if you need so
 3. Run `sls deploy` to deploy the package with Serverless
 4. Upon successful push, you will receive an endpoint URL, such as `https://ufj5gb4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender`
 5. Test running a POST request to the prerenderer, like so: `https://ufj5gb4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender?url=https://www.google.com/?client=safarihttp://prerender-demo.s3-website.eu-north-1.amazonaws.com/thatview`
+6. Copy the endpoint URL, and paste it into the `BASE_URL_RENDERER` constant in `functions/edgePrerenderResponse.js` (should be line 26)
 
 ### Host it in S3
 

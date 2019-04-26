@@ -22,8 +22,8 @@ exports.handler = (event, context, callback) => {
 	const request = event.Records[0].cf.request;
 	const response = event.Records[0].cf.response;
 
-	const BASE_URL_RENDERER =
-		'https://uxj5ky4iw8.execute-api.eu-north-1.amazonaws.com/dev/prerender/?url=';
+	// TODO: Change this URL!
+	const BASE_URL_RENDERER = '{YOUR_DEPLOYED_PRERENDER_FUNCTION_ENDPOINT_HERE}/?url=';
 	const HOST = request.headers['host'][0].value;
 	const PRERENDER_URL = request.headers['x-prerender-uri'][0].value;
 	const SHOULD_PRERENDER = request.headers['x-should-prerender'][0].value;
@@ -31,6 +31,7 @@ exports.handler = (event, context, callback) => {
 
 	// Avoid requests for files
 	if (SHOULD_PRERENDER === 'true' && !PRERENDER_URL.includes('.')) {
+		// INFO: For various reasons, I've used http here, but feel free to change or improve this for your case
 		const URL = BASE_URL_RENDERER + 'http://' + HOST + PRERENDER_URL;
 		console.log('Full rendering path', URL);
 
