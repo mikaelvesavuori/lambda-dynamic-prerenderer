@@ -1,0 +1,21 @@
+service: lambda-prerender-service
+provider:
+  name: aws
+  versionFunctions: false
+  runtime: nodejs8.10
+  stage: ${opt:stage,'dev'}
+  region: eu-north-1
+  memorySize: 2048
+  timeout: 20
+custom:
+  objectPrefix: '${self:service}-${self:provider.stage}'
+functions:
+  prerender:
+    handler: functions/prerender.handler
+    description: Prerender page provided with URL query parameter
+    environment:
+      DEBUG: 0
+    events:
+      - http:
+          path: prerender
+          method: get
