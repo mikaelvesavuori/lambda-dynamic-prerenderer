@@ -1,13 +1,29 @@
 {
 	"name": "lambda-prerender",
-	"version": "1.0.0",
+	"description": "Dynamically prerender pages for bots and crawlers, with Lambda@Edge, S3 and CloudFront. No more need for isomorphic/server-side rendering!",
+	"keywords": [
+		"lambda-functions",
+		"lambda-edge",
+		"serverless",
+		"s3-website",
+		"cloudfront",
+		"prerendering",
+		"seo",
+		"dynamic-rendering"
+	],
+	"version": "1.0.1",
 	"main": "index.js",
+	"author": "Mikael Vesavuori",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mikaelvesavuori/lambda-dynamic-prerenderer"
+	},
 	"license": "MIT",
 	"devDependencies": {
-		"serverless": "^1.41.0"
+		"serverless": "^1.60.4"
 	},
 	"dependencies": {
-		"chrome-aws-lambda": "^1.14.0",
-		"puppeteer-core": "^1.14.0"
+		"chrome-aws-lambda": "^2.0.1",
+		"puppeteer-core": "^2.0.0"
 	}
 }

@@ -122,7 +122,7 @@ I am overreaching a bit on what to create, but at least the following works for 
 10. Save
 11. Once again, everything will redeploy so have the CloudFront main view open to see the progress
 
-![CloudFront behavior settings](/cloudfront-behavior-settings.png 'CloudFront behavior settings')
+![CloudFront behavior settings](/cloudfront-behavior-settings.png "CloudFront behavior settings")
 
 ### Test if it will render correctly
 

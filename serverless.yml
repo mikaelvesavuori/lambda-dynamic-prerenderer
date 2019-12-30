@@ -1,14 +1,20 @@
-service: lambda-prerender-service
+service:
+  name: lambda-prerender-service
+
+frameworkVersion: ">=1.6.0 <2.0.0"
+
 provider:
   name: aws
-  versionFunctions: false
-  runtime: nodejs8.10
+  runtime: nodejs12.x
   stage: ${opt:stage,'dev'}
   region: eu-north-1
   memorySize: 2048
   timeout: 20
+  versionFunctions: false
+
 custom:
-  objectPrefix: '${self:service}-${self:provider.stage}'
+  objectPrefix: "${self:service}-${self:provider.stage}"
+
 functions:
   prerender:
     handler: functions/prerender.handler
