@@ -20,7 +20,7 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"serverless": "^1.63.0"
+		"serverless": "^1.70.0"
 	},
 	"dependencies": {
 		"chrome-aws-lambda": "^2.0.2",
