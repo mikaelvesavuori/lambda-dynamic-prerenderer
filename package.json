@@ -1,29 +1,35 @@
 {
-	"name": "lambda-prerender",
-	"description": "Dynamically prerender pages for bots and crawlers, with Lambda@Edge, S3 and CloudFront. No more need for isomorphic/server-side rendering!",
-	"keywords": [
-		"lambda-functions",
-		"lambda-edge",
-		"serverless",
-		"s3-website",
-		"cloudfront",
-		"prerendering",
-		"seo",
-		"dynamic-rendering"
-	],
-	"version": "1.0.1",
-	"main": "index.js",
-	"author": "Mikael Vesavuori",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mikaelvesavuori/lambda-dynamic-prerenderer"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"serverless": "^1.70.0"
-	},
-	"dependencies": {
-		"chrome-aws-lambda": "^2.0.2",
-		"puppeteer-core": "^2.1.1"
-	}
+  "name": "lambda-prerender",
+  "description": "Dynamically prerender pages for bots and crawlers, with Lambda@Edge, S3 and CloudFront. No more need for isomorphic/server-side rendering!",
+  "keywords": [
+    "lambda-functions",
+    "lambda-edge",
+    "serverless",
+    "s3-website",
+    "cloudfront",
+    "prerendering",
+    "seo",
+    "dynamic-rendering"
+  ],
+  "version": "1.0.1",
+  "main": "index.js",
+  "author": "Mikael Vesavuori",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikaelvesavuori/lambda-dynamic-prerenderer"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.70.0"
+  },
+  "dependencies": {
+    "chrome-aws-lambda": "^2.0.2",
+    "puppeteer-core": "^2.1.1",
+    "snyk": "^1.319.2"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
