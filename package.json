@@ -20,12 +20,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "serverless": "^1.63.0"
+    "serverless": "^1.70.0"
   },
   "dependencies": {
     "chrome-aws-lambda": "^2.0.2",
     "puppeteer-core": "^2.1.1",
-    "snyk": "^1.316.2"
+    "snyk": "^1.319.2"
   },
   "scripts": {
     "snyk-protect": "snyk protect",
