@@ -3,20 +3,30 @@ version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
-  'npm:debug:20170905':
-    - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > socket.io-stream > debug:
-        patched: '2020-05-10T08:19:52.569Z'
   SNYK-JS-LODASH-567746:
-    - serverless > @serverless/components > graphlib > lodash:
-        patched: '2020-05-10T08:19:52.569Z'
-    - serverless > @serverless/components > @serverless/inquirer > inquirer > lodash:
-        patched: '2020-05-10T08:19:52.569Z'
-    - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > winston > async > lodash:
-        patched: '2020-05-10T08:19:52.569Z'
-    - serverless > @serverless/enterprise-plugin > dependency-tree > precinct > detective-typescript > @typescript-eslint/typescript-estree > lodash:
-        patched: '2020-05-10T08:19:52.569Z'
-    - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > @tencent-sdk/capi > request-promise-native > request-promise-core > lodash:
-        patched: '2020-05-10T08:19:52.569Z'
-  'npm:ms:20170412':
-    - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > socket.io-stream > debug > ms:
-        patched: '2020-05-10T08:19:52.569Z'
+    - serverless > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > @serverless/enterprise-plugin > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > archiver > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > inquirer > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > json-refs > graphlib > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > @serverless/components > prettyoutput > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > @serverless/enterprise-plugin > @serverless/event-mocks > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > archiver > archiver-utils > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > archiver > async > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > archiver > zip-stream > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > tabtab > inquirer > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > @serverless/cli > @serverless/template > graphlib > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
+    - serverless > archiver > zip-stream > archiver-utils > lodash:
+        patched: '2020-05-03T02:27:53.948Z'
