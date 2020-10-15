@@ -4,6 +4,8 @@
 
 Dynamic Rendering is, as the name implies, about rendering a page based on a dynamic condition. What we want to do is solve the very common problem of modern Progressive Web Apps not working very well with some older crawlers that are unfortunately still in use across the web, such as on those used by Facebook and LinkedIn. Our condition is therefore ”if a crawler or bot sees the page, give it prerendered markup”.
 
+Even Google thinks this is a pretty good approach for SEO. Refer to their documents [Understand the JavaScript SEO basics](https://developers.google.com/search/docs/guides/javascript-seo-basics) and [Implement dynamic rendering](https://developers.google.com/search/docs/guides/dynamic-rendering) for further reading.
+
 For this to work, we need to intercept the browser’s request BEFORE it actually hits the server to see whether the visitor is a bot or not. This repo assumes Amazon Web Services (AWS) for the entire solution. For the edge function capability, this responsibility could probably be doled out to Cloudflare Workers or similar as well.
 
 The individual services used will be:
