@@ -15,7 +15,7 @@ The individual services used will be:
 
 All of this magic can be fairly tedious to work with from scratch, especially if you are not accustomed to AWS. Combined with the slow deployment times, it’s not really the most user-friendly mini-project I’ve done. I hope I spare some of you out there a bit of wasted effort!
 
-The below helps with the overall steps for setting everything up, with some steps automated and some manual. Since my last version, Serverless Framework has added more support for Lambda@Edge functions, but still not enough to make my capable of deploying all the functions and setting up the Cloudfront the way it's needed. Note that I am not saying it's not possible, but you won't find it working like that in this repo. [You should be able to automate everything (minus function deployment) through Terraform](https://transcend.io/blog/lambda-edge-functions-in-terraform) if that's your poison of choice.
+The below helps with the overall steps for setting everything up, with some steps automated and some manual. Since my last version, Serverless Framework has added more support for Lambda@Edge functions, but still not enough to make me capable of deploying all the functions and setting up Cloudfront the way it's supposed to be. Note that I am not saying it's not possible, but you won't find it working like that in this repo. [You should be able to automate everything (minus function deployment) through Terraform](ttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution) if that's your poison of choice.
 
 _An improvement on this prerenderer would be to include render-caching capabilities so you need to do less processing._
 
@@ -24,9 +24,10 @@ _An improvement on this prerenderer would be to include render-caching capabilit
 ### Prerequisites
 
 - You will need an AWS account
-- Highly likely that you need to have the AWS SDK installed
+- You will need [Serverless Framework](https://www.serverless.com) installed if you are going to use the automated approach
+- Highly likely that you need to have the [AWS CLI](https://aws.amazon.com/cli/) installed
 - Highly likely that you need to be logged in through the terminal/environment
-- Optional: A REST client like Insomnia if you don't really love curl'ing in your terminal
+- Optional: A REST client like [Insomnia](https://insomnia.rest) if you don't really love to curl in your terminal
 
 ### Create a static build of a site
 
@@ -147,7 +148,7 @@ Services that should be able to give you an indication of functionality:
 - Google Mobile-Friendly Test: [https://search.google.com/test/mobile-friendly](https://search.google.com/test/mobile-friendly)
 - LinkedIn: [https://www.linkedin.com](https://www.linkedin.com)
 
-If you use Insomnia or Postman, you can try GETting your Cloudfront distribution with a header like `googlebot` and it should respond with rendered HTML. Removing the header should in turn start returning the basic HTML again.
+If you use Insomnia or Postman, you can try GETting your Cloudfront distribution with a `user-agent` header like `googlebot` and it should respond with rendered HTML. Removing the header should in turn start returning the basic non-rendered HTML again.
 
 ### Where to find logs?
 
