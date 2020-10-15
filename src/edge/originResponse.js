@@ -1,6 +1,6 @@
 const https = require("https");
 
-const PRERENDERER_ENDPOINT = "https://snab8fwm3l.execute-api.eu-north-1.amazonaws.com/dev/prerender";
+const PRERENDERER_ENDPOINT = "https://{YOUR_UNIQUE_ID}.execute-api.eu-north-1.amazonaws.com/dev/prerender";
 
 /**
  * @description The third function to fire. Pre-render content if user is a bot.
