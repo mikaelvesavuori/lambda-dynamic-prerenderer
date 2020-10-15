@@ -1,0 +1,28 @@
+service:
+  name: lambda-dynamic-prerenderer-edge
+
+frameworkVersion: ">=2.4.0"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1 # "CloudFront associated functions have to be deployed to the us-east-1 region."
+  memorySize: 2048
+
+plugins:
+  - serverless-webpack
+
+functions:
+  viewerRequest:
+    handler: src/edge/viewerRequest.handler
+    description: Viewer request event (when the CloudFront first receives the request from the client)
+  originRequest:
+    handler: src/edge/originRequest.handler
+    description: Origin request event (before the request to the origin service)
+  originResponse:
+    handler: src/edge/originResponse.handler
+    description: Origin response event (when CloudFront receives the response from the origin service)
+  viewerResponse:
+    handler: src/edge/viewerResponse.handler
+    description: Viewer response event (before the response is returned to the client)

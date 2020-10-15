@@ -1,27 +1,24 @@
 service:
-  name: lambda-prerender-service
+  name: lambda-dynamic-prerenderer
 
-frameworkVersion: ">=1.6.0 <2.0.0"
+frameworkVersion: ">=2.4.0"
 
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: ${opt:stage,'dev'}
+  stage: ${opt:stage, 'dev'}
   region: eu-north-1
   memorySize: 2048
   timeout: 20
   versionFunctions: false
-
-custom:
-  objectPrefix: "${self:service}-${self:provider.stage}"
+  environment:
+    ALLOW_ORIGIN: "*" # Ideally set this to a trusted environment
 
 functions:
   prerender:
-    handler: functions/prerender.handler
+    handler: src/prerenderer/prerenderer.handler
     description: Prerender page provided with URL query parameter
-    environment:
-      DEBUG: 0
     events:
       - http:
           path: prerender
-          method: get
+          method: GET

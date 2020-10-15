@@ -1,7 +1,0 @@
-<CORSConfiguration>
-	<CORSRule>
-			<AllowedOrigin>*</AllowedOrigin>
-			<AllowedMethod>POST</AllowedMethod>
-			<AllowedHeader>*</AllowedHeader>
-	</CORSRule>
-</CORSConfiguration>
