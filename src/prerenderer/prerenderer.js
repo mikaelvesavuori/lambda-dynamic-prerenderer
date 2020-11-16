@@ -8,6 +8,7 @@ exports.handler = async (event, context, callback) => {
 			process.env.ALLOW_ORIGIN || '*',
 		"Access-Control-Request-Method": "POST",
 	};
+	const WAIT_AFTER_FIRST_NETWORK_IDLE = 2000;
 
 	if (event.queryStringParameters) {
 		const TARGET_URL = event.queryStringParameters.url;
@@ -30,7 +31,10 @@ exports.handler = async (event, context, callback) => {
 
 		return new Promise(async (resolve, reject) => {
 			let page = await BROWSER.newPage();
-			await page.goto(TARGET_URL);
+			await page.goto(TARGET_URL, { waitUntil: 'networkidle0' });
+			await new Promise((resolve) => {
+				setTimeout(resolve, WAIT_AFTER_FIRST_NETWORK_IDLE);
+			});
 			const RESULT = await page.content();
 			resolve(RESULT);
 		}).then((RESULT) => {
